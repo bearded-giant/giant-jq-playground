@@ -21,7 +21,7 @@
     "@monaco-editor/react": "^4.7.0",
     "@mui/icons-material": "^6.4.4",
     "@mui/lab": "^6.0.0-beta.21",
-    "@mui/material": "^6.4.8",
+    "@mui/material": "^7.3.8",
     "@prisma/client": "^6.7.0",
     "@scalar/api-reference-react": "^0.8.27",
     "@sentry/nextjs": "^9.17.0",

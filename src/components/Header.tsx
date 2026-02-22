@@ -8,7 +8,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { Api, Bookmarks, ContentCopy, GitHub, Help, Share } from "@mui/icons-material";
+import { Api, ContentCopy, GitHub, Help, Save, Share } from "@mui/icons-material";
 import { useState } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
@@ -120,7 +120,7 @@ const Header: React.FC<HeaderProps> = ({
               onClick={onSavedQueriesClick}
               aria-label="Saved Queries"
             >
-              <Bookmarks />
+              <Save />
             </IconButton>
           </Tooltip>
           <Tooltip title="Cheatsheet">

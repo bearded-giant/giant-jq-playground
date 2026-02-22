@@ -4,7 +4,7 @@ import { withSentryConfig } from '@sentry/nextjs';
 const nextConfig = {
     output: "standalone",
     // Include packages that are dynamically loaded by piscina workers
-    serverExternalPackages: ['jq-wasm', 'piscina'],
+    serverExternalPackages: ['jq-wasm', 'piscina', 'better-sqlite3'],
     outputFileTracingIncludes: {
         '/app/api/jq/route': ['./src/workers/server/worker.cjs', './node_modules/jq-wasm/**/*'],
     },

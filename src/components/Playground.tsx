@@ -15,6 +15,7 @@ import { useRouter } from 'next/navigation';
 import { HttpMethodType, HttpType, Snippet, SnippetType, OptionsType, Options } from '@/schemas';
 import { SnippetCreateResponse, SnippetError } from '@/schemas/api';
 import { ZodError } from 'zod';
+import SavedQueriesDrawer from './SavedQueriesDrawer';
 
 const runTimeout = 30000;
 
@@ -60,6 +61,7 @@ function PlaygroundElement({ input, initialNotification }: PlaygroundProps) {
     const [minEditorHeight, setMinEditorHeight] = useState<number>(0);
     const [minQueryEditorHeight, setQueryMinEditorHeight] = useState<number>(0);
     const [notification, setNotification] = useState<NotificationProps | undefined>(initialNotification);
+    const [savedQueriesOpen, setSavedQueriesOpen] = useState(false);
 
     const workerRef = useRef<JQWorker | null>(null);
     const runIdRef = useRef<number | null>(null);
@@ -237,9 +239,18 @@ function PlaygroundElement({ input, initialNotification }: PlaygroundProps) {
             .catch(error => setNotification({ message: error.message, messageId: generateMessageId(), severity: 'error' }));
     }, [query, options]);
 
+    const handleLoadSavedQuery = useCallback((data: { json?: string; http?: HttpType; query: string; options?: OptionsType }) => {
+        setJson(data.json ?? undefined);
+        setHttp(data.http ?? undefined);
+        setQuery(data.query);
+        setOptions(data.options ?? []);
+        setSavedQueriesOpen(false);
+        setNotification({ message: 'Query loaded', messageId: generateMessageId(), severity: 'success' });
+    }, []);
+
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', bgcolor: 'background.default', color: 'text.primary' }}>
-            <Header onShare={handleShare} onExampleClick={onExampleClick} onCopyClick={onCopyClick} enableCopyButton={!!query.length} />
+            <Header onShare={handleShare} onExampleClick={onExampleClick} onCopyClick={onCopyClick} onSavedQueriesClick={() => setSavedQueriesOpen(true)} enableCopyButton={!!query.length} />
             <Container
                 sx={{
                     flexGrow: 1,
@@ -303,6 +314,12 @@ function PlaygroundElement({ input, initialNotification }: PlaygroundProps) {
                     </Typography>
                 </Box>
                 <Notification message={notification?.message} messageId={notification?.messageId} severity={notification?.severity} />
+                <SavedQueriesDrawer
+                    open={savedQueriesOpen}
+                    onClose={() => setSavedQueriesOpen(false)}
+                    onLoad={handleLoadSavedQuery}
+                    currentState={{ json, http, query, options }}
+                />
             </Container>
         </Box>
     );

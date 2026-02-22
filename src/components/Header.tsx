@@ -8,7 +8,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { Api, ContentCopy, GitHub, Help, Share } from "@mui/icons-material";
+import { Api, Bookmarks, ContentCopy, GitHub, Help, Share } from "@mui/icons-material";
 import { useState } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
@@ -18,6 +18,7 @@ interface HeaderProps {
   onShare: () => void;
   onExampleClick: (json: string, query: string) => void;
   onCopyClick: () => void;
+  onSavedQueriesClick: () => void;
   enableCopyButton: boolean;
 }
 
@@ -25,6 +26,7 @@ const Header: React.FC<HeaderProps> = ({
   onShare,
   onExampleClick,
   onCopyClick,
+  onSavedQueriesClick,
   enableCopyButton,
 }) => {
   const [cheatsheetOpen, setCheatSheetOpen] = useState(false);
@@ -111,6 +113,15 @@ const Header: React.FC<HeaderProps> = ({
                 <ContentCopy />
               </IconButton>
             </div>
+          </Tooltip>
+          <Tooltip title="Saved Queries">
+            <IconButton
+              color="inherit"
+              onClick={onSavedQueriesClick}
+              aria-label="Saved Queries"
+            >
+              <Bookmarks />
+            </IconButton>
           </Tooltip>
           <Tooltip title="Cheatsheet">
             <IconButton

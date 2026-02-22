@@ -81,10 +81,12 @@ const Header: React.FC<HeaderProps> = ({ onShare, onExampleClick, onCopyClick, e
                             </Link>
                         </IconButton>
                     </Tooltip>
-                    <Tooltip title="Share">
-                        <IconButton color="inherit" onClick={onShare} aria-label="Share">
-                            <Share />
-                        </IconButton>
+                    <Tooltip title="Share (unavailable)">
+                        <div>
+                            <IconButton color="inherit" aria-label="Share" disabled>
+                                <Share />
+                            </IconButton>
+                        </div>
                     </Tooltip>
                     <Tooltip title="Source">
                         <IconButton color="inherit" aria-label="Source">

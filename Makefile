@@ -1,13 +1,13 @@
 .PHONY: up down build dev lint test test-watch openapi migrate generate logs clean
 
 up:
-	docker compose up -d --build
+	docker compose up -d && open http://localhost:3067
 
 down:
 	docker compose down
 
 build:
-	docker compose exec jqplay npm run build
+	docker compose up -d --build
 
 dev:
 	npm run dev

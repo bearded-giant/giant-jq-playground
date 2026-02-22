@@ -24,7 +24,7 @@
     "@mui/material": "^6.4.8",
     "@prisma/client": "^6.7.0",
     "@scalar/api-reference-react": "^0.8.27",
-    "@sentry/nextjs": "^9.17.0",
+    "@sentry/nextjs": "^10.39.0",
     "@sentry/node": "^9.17.0",
     "ajv": "^8.17.1",
     "better-sqlite3": "^12.6.2",

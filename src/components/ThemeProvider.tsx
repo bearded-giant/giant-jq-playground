@@ -59,25 +59,25 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
         palette: {
             mode: darkMode ? 'dark' : 'light',
             primary: {
-                main: darkMode ? '#61dafb' : '#007acc',
+                main: darkMode ? '#89b4fa' : '#1e66f5',
             },
             secondary: {
-                main: darkMode ? '#f6f8fa' : '#282c34',
+                main: darkMode ? '#cdd6f4' : '#4c4f69',
             },
             background: {
-                default: darkMode ? '#1e1e1e' : '#ffffff',
-                paper: darkMode ? '#2d2d2d' : '#f5f5f5',
+                default: darkMode ? '#1e1e2e' : '#eff1f5',
+                paper: darkMode ? '#313244' : '#e6e9ef',
             },
             text: {
-                primary: darkMode ? '#d4d4d4' : '#000000',
-                secondary: darkMode ? '#858585' : '#333333',
+                primary: darkMode ? '#cdd6f4' : '#4c4f69',
+                secondary: darkMode ? '#a6adc8' : '#6c6f85',
             },
             action: {
-                hover: darkMode ? '#333333' : '#e0e0e0',
+                hover: darkMode ? '#45475a' : '#ccd0da',
             },
             code: {
-                background: darkMode ? '#2d2d2d' : '#f9f2f4',
-                text: darkMode ? '#9cdcfe' : '#a31515',
+                background: darkMode ? '#181825' : '#e6e9ef',
+                text: darkMode ? '#89b4fa' : '#d20f39',
             },
         },
         typography: {

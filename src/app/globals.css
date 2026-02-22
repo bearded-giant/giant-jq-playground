@@ -4,12 +4,12 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: #eff1f5;
 }
 
 @media (prefers-color-scheme: dark) {
   html,
   body {
-    background-color: #1e1e1e;
+    background-color: #1e1e2e;
   }
 }

@@ -296,7 +296,7 @@ function PlaygroundElement({ input, initialNotification }: PlaygroundProps) {
                         All jq queries and HTTP requests to fetch JSON are processed locally in your browser.<br />
                         Snippets are only sent to the server when you choose to share them.<br />
                         View the&nbsp;
-                        <Link href="https://github.com/jqlang/playground" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <Link href="https://github.com/bearded-giant/giant-jq-playground" style={{ textDecoration: 'none', color: 'inherit' }}>
                             source code
                         </Link>
                         &nbsp;on GitHub.

@@ -90,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({ onShare, onExampleClick, onCopyClick, e
                     </Tooltip>
                     <Tooltip title="Source">
                         <IconButton color="inherit" aria-label="Source">
-                            <Link href="https://github.com/jqlang/playground" passHref target='_blank' style={{ color: 'inherit', display: 'flex' }}>
+                            <Link href="https://github.com/bearded-giant/giant-jq-playground" passHref target='_blank' style={{ color: 'inherit', display: 'flex' }}>
                                 <GitHub />
                             </Link>
                         </IconButton>
